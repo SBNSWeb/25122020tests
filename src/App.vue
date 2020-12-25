@@ -16,6 +16,7 @@ export default {
   }, 
   data(){
     return{
+      //засунуть это все в AXIOS
       question: {
         text: 'hello',
         variants: {

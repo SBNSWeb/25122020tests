@@ -5,7 +5,7 @@
         </p>
         <div class = "variants">
             <label v-for="(text, key) in variants" v-bind:key="key">
-                <input type="checkbox" v-model="chexboxes" v-bind:value="key"> {{key}}
+                <input type="checkbox" v-model="checkboxes" v-bind:value="key"> {{key}}
             </label>
         </div>
     </div>
@@ -17,7 +17,7 @@
         props: ['variants'],
         data(){
             return{
-                chexboxes: []
+                checkboxes: []
 
             }
         },
@@ -26,17 +26,17 @@
                 let rightVars=[];
                 for(let key in this.variants){
                     if(this.variants[key] == true)
-                        rigthVars.push(key)
+                        rightVars.push(key)
                 }
                 let isAllRightChecked =true;
 
                 for(let el of rightVars){
-                    if(this.chexboxes.indexOf(el)== -1)
+                    if(this.checkboxes.indexOf(el)== -1)
                         isAllRightChecked = false;
                 }
 
                 let isNoIncorrect = true;
-                for(let el of this.variants){
+                for(let el of this.checkboxes){
                     if(this.variants[el]==false)
                         isNoIncorrect=false;
                 }
@@ -59,7 +59,7 @@
     .right{
         background-color: #4fa30e;
     }
-    .incorrecct{
+    .incorrect{
         background-color: red;
     }
 </style>
